@@ -7,7 +7,7 @@ import (
 )
 
 type DBI interface {
-	NewDB() *mgo.Session
+	NewSession() *mgo.Session
 	Get() string
 }
 
@@ -19,7 +19,7 @@ type Controller struct {
 func NewController(db DBI) *Controller {
 	return &Controller{
 		DB:    db,
-		Mongo: db.NewDB(),
+		Mongo: db.NewSession(),
 	}
 }
 

@@ -5,11 +5,11 @@ import mgo "gopkg.in/mgo.v2"
 type DBObject struct {
 }
 
-func NewO() DBObject {
+func NewDBObject() DBObject {
 	return DBObject{}
 }
 
-func (d DBObject) NewDB() *mgo.Session {
+func (d DBObject) NewSession() *mgo.Session {
 	return &mgo.Session{}
 }
 
