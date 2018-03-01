@@ -3,14 +3,11 @@ package db
 import mgo "gopkg.in/mgo.v2"
 
 type FakeDBObject struct {
+	Session *mgo.Session
 }
 
-func NewDBObject() FakeDBObject {
-	return FakeDBObject{}
-}
-
-func (d FakeDBObject) NewSession() *mgo.Session {
-	return &mgo.Session{}
+func NewSession() FakeDBObject {
+	return FakeDBObject{&mgo.Session{}}
 }
 
 func (d FakeDBObject) Get() string {

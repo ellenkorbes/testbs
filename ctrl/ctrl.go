@@ -2,24 +2,22 @@ package ctrl
 
 import (
 	"fmt"
-
-	mgo "gopkg.in/mgo.v2"
 )
 
 type DBI interface {
-	NewSession() *mgo.Session
+	// NewSession() *mgo.Session
 	Get() string
 }
 
 type Controller struct {
-	DB    DBI
-	Mongo *mgo.Session
+	DB DBI
+	// Mongo *mgo.Session
 }
 
 func NewController(db DBI) *Controller {
 	return &Controller{
-		DB:    db,
-		Mongo: db.NewSession(),
+		DB: db,
+		// Mongo: db.NewSession(),
 	}
 }
 

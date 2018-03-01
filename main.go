@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	d := db.NewDBObject()
+	d := db.NewSession()
 	c := ctrl.NewController(d)
 
 	c.Get()
